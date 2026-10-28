@@ -13,7 +13,7 @@ export class Helper {
 
   static getLoginDetails() {
     return {
-      email: "pavanol@xyz.com",
+      email: "aaa.bbb@xyz.com",
       password: "test@123",
     };
   }

@@ -38,6 +38,7 @@ const loginDataSources: LoginDataSource[] = [
     },
 ];
 const loginData = loginDataSources.flatMap((source) => source.rows);
+//console.log("login data :", loginData);
 const invalidLoginData = loginData.find((row) => row.expected === 'failure' && row.email.trim() && row.password.trim());
 
 if (!invalidLoginData) {
@@ -46,7 +47,7 @@ if (!invalidLoginData) {
 
 test('Valid customer login @master @sanity @regression @web', async ({ homePage, loginPage }) => {
     const credentials = Helper.getLoginDetails();
-
+console.log("credentials :", credentials);
     await test.step('1) Navigate to My Account login', async () => {
         await homePage.navigateToLogin();
         expect(await loginPage.isLoginPageExists()).toBeTruthy();
