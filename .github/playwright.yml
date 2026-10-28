@@ -95,7 +95,7 @@ jobs:
             playwright-report/
             reports/
           retention-days: 30
-          if-no-files-found: warn
+          #if-no-files-found: warn
 
       - name: 📋 Upload Custom Report
         if: always()
@@ -104,7 +104,7 @@ jobs:
           name: custom-report
           path: custom-report/
           retention-days: 30
-          if-no-files-found: warn
+          #if-no-files-found: warn
 
       - name: 📈 Upload Allure Results
         if: always()
@@ -113,4 +113,4 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 30
-          if-no-files-found: warn
+          #if-no-files-found: warn
