@@ -19,11 +19,11 @@ on:
           - test:master
           - test:sanity
           - test:regression
-          - test:e2e
+          - test:end-to-end
           - test:api
           - test:web
           - test:datadriven
-        default: "test:e2e"
+        default: "test:end-to-end"
       browser:
         description: "Select browser"
         type: choice
@@ -68,7 +68,7 @@ jobs:
         shell: bash
         env:
           CI: "1"
-          TEST_SUITE: ${{ inputs.test_suite || 'test:e2e' }}
+          TEST_SUITE: ${{ inputs.test_suite || 'test:end-to-end' }}
           BROWSER: ${{ inputs.browser || 'chromium' }}
           MODE: ${{ inputs.mode || 'headless' }}
         run: |
